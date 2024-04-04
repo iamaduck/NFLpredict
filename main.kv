@@ -1,0 +1,80 @@
+BoxLayout:
+    orientation: "vertical"
+
+    MDTopAppBar:
+        title: "NFLpredict by Ben"
+        md_bg_color: .2, .2, .2, 1
+        specific_text_color: 1, 1, 1, 1
+    
+    MDBottomNavigation:
+        panel_color: .2, .2, .2, 1
+
+        MDBottomNavigationItem:
+            name: 'predict screen'
+            text: 'Predict'
+
+            GridLayout:
+                rows: 4
+                columns: 1
+                spacing: 10
+                padding: 10
+
+                MDLabel:
+                    text: 'Select each team below:'
+                    font_style: 'H5'
+                    size_hint_y: .4
+                
+                GridLayout:
+                    rows: 2
+                    columns: 2
+                    spacing: 10
+                    padding: 10
+
+                    MDTextField:
+                        id: home
+                        hint_text: 'HOME'
+                        helper_text: 'Not a valid team (use select button!)'
+                        helper_text_mode: "on_error" 
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                        size_hint_x: .6
+                        required: True
+                        
+                    MDRectangleFlatButton:
+                        text: 'Select...'
+                        pos_hint: {'center_x': 0.6, 'center_y': 0.4}
+                        on_press:
+                            app.select(True)
+                    
+                    MDTextField:
+                        id: away
+                        hint_text: 'AWAY'
+                        helper_text: 'Not a valid team (use select button!)'
+                        helper_text_mode: "on_error" 
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                        size_hint_x: .6
+                        required: True
+                        
+                    MDRectangleFlatButton:
+                        text: 'Select...'
+                        pos_hint: {'center_x': 0.6, 'center_y': 0.4}
+                        on_press:
+                            app.select(False)
+                        
+                MDRectangleFlatButton:
+                    text: 'Submit'
+                    on_press:
+                        app.submit()
+
+                MDLabel:
+                    text: ''
+                    id: show
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                    size_hint_y: .4
+
+        MDBottomNavigationItem:
+            name: 'settings'
+            text: 'Settings'
+            icon: 'language-cpp'
+            MDLabel:
+                text: 'Very temp lol'
+                halign: 'center'
