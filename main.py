@@ -3,6 +3,9 @@ from kivy.lang import Builder
 from kivymd.toast import toast
 from kivymd.uix.bottomsheet import MDListBottomSheet
 import numpy as np
+
+# due to melo being old, np.float has to be changed to float and np.asscalar(x) has to be changed to x.item()
+# i've submitted these changes as a fork
 from melo import Melo
 
 __version__ = "0.1.3"
@@ -78,8 +81,8 @@ class Predict(MDApp):
             if mean == 0:
                 self.root.ids.show.text = f'Mean is {abs(mean)}, pick your favourite!'
             elif mean < 0:
-                self.root.ids.show.text = f'{away} wins by {round(abs(mean), 2)}. (Raw: {mean})'
+                self.root.ids.show.text = f'{away} -{round(abs(mean), 2)} (Raw: {mean})'
             elif mean > 0:
-            	self.root.ids.show.text = f'{home} wins by {round(abs(mean), 2)}. (Raw: {mean})'
+            	self.root.ids.show.text = f'{home} -{round(abs(mean), 2)} (Raw: {mean})'
 
 Predict().run()
