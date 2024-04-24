@@ -8,7 +8,7 @@ import numpy as np
 # i've submitted these changes as a fork
 from melo import Melo
 
-__version__ = "0.1.3"
+__version__ = "0.2"
 
 class Predict(MDApp):
 

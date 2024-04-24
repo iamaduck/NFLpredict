@@ -24,10 +24,10 @@ source.include_exts = py,png,jpg,kv,atlas,dat
 #source.include_patterns = assets/*,images/*.png
 
 # (list) Source files to exclude (leave empty to not exclude anything)
-#source.exclude_exts = spec
+source.exclude_exts = spec,md
 
 # (list) List of directory to exclude (leave empty to not exclude anything)
-#source.exclude_dirs = tests, bin, venv
+source.exclude_dirs = tests, bin, venv, Versions, .git, .buildozer
 
 # (list) List of exclusions using pattern matching
 # Do not prefix with './'
@@ -42,7 +42,7 @@ version = 0.2
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,melo
+requirements = python3,kivy,kivymd==1.1.1,numpy,scipy,melo
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -50,9 +50,11 @@ requirements = python3,kivy,melo
 
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = nflpredictpresplash.png
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
+icon.filename = nflpredicticon.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
@@ -90,6 +92,7 @@ fullscreen = 0
 # darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
 # olive, purple, silver, teal.
 #android.presplash_color = #FFFFFF
+android.presplash_color = #4C217A
 
 # (string) Presplash animation using Lottie format.
 # see https://lottiefiles.com/ for examples and https://airbnb.design/lottie/
